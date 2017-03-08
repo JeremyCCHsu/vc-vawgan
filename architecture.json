@@ -1,0 +1,47 @@
+{
+	"hwc": [513, 1, 1],
+	"center": 0,
+	"z_dim": 64,
+	"y_dim": 10,
+	"mode": "VAE-GAN",
+	"encoder": {
+		"kernel": [[7, 1], [7, 1], [7, 1], [7, 1], [7, 1]],
+		"stride": [[3, 1], [3, 1], [3, 1], [3, 1], [3, 1]],
+		"output": [16, 32, 64, 128, 256],
+		"l2-reg": 1e-6
+	},
+	"generator": {
+		"hwc": [19, 1, 81],
+		"merge_dim": 171,
+		"kernel": [[9, 1], [7, 1], [7, 1], [1025, 1]],
+		"stride": [[3, 1], [3, 1], [3, 1], [1, 1]],
+		"output": [32, 16, 8, 1],
+		"l2-reg": 1e-6
+	},
+	"discriminator": {
+		"merge_dim": 1024,
+		"kernel": [[7, 1], [7, 1], [115, 1]],
+		"stride": [[3, 1], [3, 1], [3, 1]],
+		"output": [16, 32, 64],
+		"l2-reg": 1e-6,
+		"feature_layer": 1
+	},
+	"training": {
+		"batch_size": 64,
+		"epoch": 50,
+		"lr": 1e-4,
+		"beta1": 0.5,
+		"gamma": 0.01,
+		"n_unroll": 5,
+		"clamping": 0.01
+	},
+	"validation": {
+		"source_speaker": "SF1",
+		"target_speaker": "TF2"
+	},
+	"dataset": {
+		"datadir": "/home/jrm/proj/vc2016b/TR_log_SP_Z_LT8000",
+		"source_file_filter": "(SF1).*(150|[01][0-4]\\d|0\\d\\d)\\.bin",
+		"target_file_filter": "(TF2).*(150|[01][0-4]\\d|0\\d\\d)\\.bin"
+	}
+}
