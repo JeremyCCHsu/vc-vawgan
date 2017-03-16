@@ -1,3 +1,6 @@
+# Demo
+https://jeremycchsu.github.io/vc-vawgan/
+
 # Hyper-parameters and other Experimental Settings  
 `z_dim: 64` the dimenstion of the phonetic content space  
 `y_dim: 10` the number of speakers  
