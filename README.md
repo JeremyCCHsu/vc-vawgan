@@ -21,4 +21,8 @@ Scales:
 
 In the intra-gender experiment (SF1 to TF2), the evaluators have access to two extra audio files for reference (per pair): a GMM baseline whose mean MOS was 1.53 and the true target whose mean MOS was 4.72.  
 
-The ANOVA tests on the MOS scores (intra-gender: VAW-GAN against VAE; inter-gender: VAW-GAN against VAE) resulted significant difference between our VAW-GAN and the VAE baseline.
+Note:
+ - The error bar in Fig. 2 indicates **standard deviation** of the sample, not **confidence interval** of the mean.
+ - The ANOVA tests on the MOS scores returned very small p-values, so we used the word **significant** in our paper.
+ (intra-gender: VAW-GAN against VAE; inter-gender: VAW-GAN against VAE)
+
